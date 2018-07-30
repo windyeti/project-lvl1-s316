@@ -1,6 +1,6 @@
 {
   "name": "littelbit-brain-games",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "hexlet brain-games",
   "files": [
     "dist"
@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/windyeti/project-lvl1-s316/issues"
   },
-  "homepage": "https://github.com/windyeti/project-lvl1-s316#readme"
+  "homepage": "https://github.com/windyeti/project-lvl1-s316#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
