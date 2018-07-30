@@ -1,0 +1,48 @@
+{
+  "name": "littelbit-brain-games",
+  "version": "1.0.0",
+  "description": "hexlet brain-games",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-map inline",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "bake": {
+    "description": "Scaffold a basic ES6 setup",
+    "scripts": {
+      "start": "echo Starting generation of default template",
+      "prestart": "echo prestart",
+      "poststart": "echo poststart",
+      "install": "npm install --loglevel warn --cache-min Infinity",
+      "preinstall": "echo Installing dependencies ...",
+      "postinstall": "npm ls --depth 0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windyeti/project-lvl1-s316.git"
+  },
+  "keywords": [
+    "[hexlet",
+    "learning",
+    "brain-games]"
+  ],
+  "author": "Egor Tikhanin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/windyeti/project-lvl1-s316/issues"
+  },
+  "homepage": "https://github.com/windyeti/project-lvl1-s316#readme"
+}
