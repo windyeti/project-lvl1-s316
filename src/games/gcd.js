@@ -8,7 +8,7 @@ const getMaxDivisor = (num1, num2) => {
   const min = Math.min(num1, num2);
   for (let i = min; i > 0; i -= 1) {
     if (max % i === 0 && min % i === 0) {
-      return i.toString();
+      return i;
     }
   }
   return false;
@@ -20,7 +20,7 @@ const getGameData = () => {
   const num2 = generateRandomNumber(1, 100);
   const question = `${num1} ${num2}`;
   const rightAnswer = getMaxDivisor(num1, num2);
-  return cons(question, rightAnswer);
+  return cons(question, rightAnswer.toString());
 };
 
 export default () => gameFlow(rule, getGameData);
