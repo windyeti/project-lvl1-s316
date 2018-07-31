@@ -1,6 +1,6 @@
 {
   "name": "littelbit-brain-games",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "author": "Egor Tikhanin",
   "license": "ISC",
   "description": "hexlet brain-games",
@@ -16,7 +16,8 @@
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-balance": "dist/bin/brain-balance.js"
+    "brain-balance": "dist/bin/brain-balance.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "scripts": {
     "babel-node": "babel-node",
