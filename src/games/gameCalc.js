@@ -1,31 +1,31 @@
 import { cons } from 'hexlet-pairs';
 
 import gameFlow from '../gameFlow';
-import numberRandom from '../utils';
+import generateRandomNumber from '../utils';
 
-const arrAction = ['+', '-', '*'];
+const arrActions = ['+', '-', '*'];
 const rule = 'What is the result of the expression?';
-const question = () => {
-  let sum = 0;
-  const randomIndAction = numberRandom(3) - 1;
-  const action = arrAction[randomIndAction];
-  const num1 = numberRandom(100);
-  const num2 = numberRandom(100);
-  const str = `${num1} ${action} ${num2}`;
+const getGameData = () => {
+  let rightAnswer;
+  const randomIndAction = generateRandomNumber(0, 2);
+  const action = arrActions[randomIndAction];
+  const num1 = generateRandomNumber(0, 100);
+  const num2 = generateRandomNumber(0, 100);
+  const question = `${num1} ${action} ${num2}`;
   switch (action) {
     case '+':
-      sum = (num1 + num2).toString();
+      rightAnswer = (num1 + num2).toString();
       break;
     case '-':
-      sum = (num1 - num2).toString();
+      rightAnswer = (num1 - num2).toString();
       break;
     case '*':
-      sum = (num1 * num2).toString();
+      rightAnswer = (num1 * num2).toString();
       break;
     default:
-      sum = 0;
+      rightAnswer = 0;
   }
-  return cons(str, sum);
+  return cons(question, rightAnswer);
 };
 
-export default () => gameFlow(rule, question);
+export default () => gameFlow(rule, getGameData);
