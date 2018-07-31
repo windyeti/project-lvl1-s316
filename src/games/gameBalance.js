@@ -35,7 +35,6 @@ const getBalance = (num) => {
 const getGameData = () => {
   const question = generateRandomNumber(1, 10000);
   const rightAnswer = getBalance(question);
-  console.log('rightAnswer:', rightAnswer);
   return cons(question, rightAnswer);
 };
 
