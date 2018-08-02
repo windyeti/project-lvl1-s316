@@ -18,13 +18,13 @@ const numMin = 2;
 const numMax = 500;
 
 const getGameData = () => {
+  let question = 0;
   if (numMin < 2 || numMax < 2) {
     console.log('Некорректно задан интервал возможных чисел');
-    const question = generateRandomNumber(2, 100);
-    const rightAnswer = isPrime(question) ? 'yes' : 'no';
-    return cons(question, rightAnswer);
+    question = generateRandomNumber(2, 100);
+  } else {
+    question = generateRandomNumber(numMin, numMax);
   }
-  const question = generateRandomNumber(numMin, numMax);
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return cons(question, rightAnswer);
 };
