@@ -6,12 +6,12 @@ import generateRandomNumber from '../utils';
 const getMaxDivisor = (num1, num2) => {
   const max = Math.max(num1, num2);
   const min = Math.min(num1, num2);
-  for (let i = min; i > 0; i -= 1) {
+  for (let i = min; i > 1; i -= 1) {
     if (max % i === 0 && min % i === 0) {
       return i;
     }
   }
-  return false;
+  return 1;
 };
 
 const rule = 'Find the greatest common divisor of given numbers.';

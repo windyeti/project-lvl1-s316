@@ -3,21 +3,20 @@ import { cons } from 'hexlet-pairs';
 import gameFlow from '../gameFlow';
 import generateRandomNumber from '../utils';
 
-const getDivisors = (num) => {
-  const divisors = [];
+const isPrime = (num) => {
   for (let i = num - 1; i > 1; i -= 1) {
-    if (num % i === 0) divisors.push(i);
+    if (num % i === 0) {
+      return false;
+    }
   }
-  return divisors;
+  return true;
 };
 
 const rule = 'Is this number prime?';
 
 const getGameData = () => {
   const question = generateRandomNumber(1, 500);
-  const arrDivisors = getDivisors(question);
-  const isPrime = arrDivisors.length === 0;
-  const rightAnswer = isPrime ? 'yes' : 'no';
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return cons(question, rightAnswer);
 };
 

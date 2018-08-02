@@ -3,20 +3,21 @@ import { cons } from 'hexlet-pairs';
 import gameFlow from '../gameFlow';
 import generateRandomNumber from '../utils';
 
-const stepsProgression = 10;
-const makeProgression = () => {
+const lengthProgression = 10;
+
+const makeProgression = (start, increment, lengthProgression) => {
   const progression = [];
-  progression[0] = generateRandomNumber(1, 10);
-  const increment = generateRandomNumber(1, 10);
-  for (let i = 1; i < stepsProgression; i += 1) {
-    progression[i] = progression[i - 1] + increment;
+  for (let i = 0; i < lengthProgression; i += 1) {
+    progression.push(start + i * increment);
   }
   return progression;
 };
 
 const rule = 'What number is missing in this progression?';
 const getGameData = () => {
-  const progression = makeProgression();
+  const start = generateRandomNumber(1, 10);
+  const increment = generateRandomNumber(1, 10);
+  const progression = makeProgression(start, increment, lengthProgression);
   const indexRandom = generateRandomNumber(1, 8);
   const rightAnswer = progression[indexRandom];
   progression[indexRandom] = '..';
