@@ -20,11 +20,12 @@ const numMax = 500;
 const getGameData = () => {
   if (numMin < 2 || numMax < 2) {
     console.log('Некорректно задан интервал возможных чисел');
-    return;
+    const question = generateRandomNumber(2, 100);
+    const rightAnswer = isPrime(question) ? 'yes' : 'no';
+    return cons(question, rightAnswer);
   }
   const question = generateRandomNumber(numMin, numMax);
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
-  console.log('===== >>>', question, '+++++ >>>', isPrime(question));
   return cons(question, rightAnswer);
 };
 
