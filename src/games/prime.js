@@ -14,9 +14,17 @@ const isPrime = (num) => {
 
 const rule = 'Is this number prime?';
 
+const numMin = 2;
+const numMax = 500;
+
 const getGameData = () => {
-  const question = generateRandomNumber(1, 500);
+  if (numMin < 2 || numMax < 2) {
+    console.log('Некорректно задан интервал возможных чисел');
+    return;
+  }
+  const question = generateRandomNumber(numMin, numMax);
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
+  console.log('===== >>>', question, '+++++ >>>', isPrime(question));
   return cons(question, rightAnswer);
 };
 
