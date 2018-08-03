@@ -4,15 +4,11 @@ import gameFlow from '../gameFlow';
 import generateRandomNumber from '../utils';
 
 const isPrime = (num) => {
-  if (num < 3) {
-    return -1;
-  } else if (num === 3) {
-    return num;
-  } else {
-    for (let i = 2; i <= num / 2; i += 1) {
-      if (num % i === 0) {
-        return i;
-      }
+  if (num < 3) return -1;
+  if (num === 3) return num;
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0) {
+      return i;
     }
   }
   return num;
