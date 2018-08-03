@@ -8,10 +8,11 @@ const isPrime = (num) => {
     return -1;
   } else if (num === 3) {
     return num;
-  }
-  for (let i = 2; i <= num / 2; i += 1) {
-    if (num % i === 0) {
-      return i;
+  } else {
+    for (let i = 2; i <= num / 2; i += 1) {
+      if (num % i === 0) {
+        return i;
+      }
     }
   }
   return num;
@@ -20,7 +21,7 @@ const isPrime = (num) => {
 const rule = 'Is this number prime?';
 
 const getGameData = () => {
-  const question = generateRandomNumber(0, 4);
+  const question = generateRandomNumber(0, 10);
   const rightAnswer = isPrime(question) === question ? 'yes' : 'no';
   return cons(question, rightAnswer);
 };
